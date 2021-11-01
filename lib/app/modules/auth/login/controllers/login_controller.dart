@@ -1,20 +1,36 @@
+import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
 class LoginController extends GetxController {
-  //TODO: Implement LoginController
+  final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  String? phone;
+  String? password;
+
+  validateNumber(String val) {
+    if (val.isEmpty) {
+      return "ما يلزمش يكون فارغ";
+    } else if (val.length != 8) {
+      return "نومرو مش صحيح";
+    }
+    return null;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  validatePassword(String val) {
+    if (val.isEmpty) {
+      return "ما يلزمش يكون فارغ";
+    } else if (val.length <= 6) {
+      return "يلزم أكثر من 6 حروف";
+    }
+    return null;
   }
 
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  void checkLogin() {
+    final isValid = loginFormKey.currentState!.validate();
+
+    if (!isValid) {
+      return;
+    }
+    loginFormKey.currentState!.save();
+  }
 }

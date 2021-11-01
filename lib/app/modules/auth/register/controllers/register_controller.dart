@@ -1,20 +1,46 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class RegisterController extends GetxController {
-  //TODO: Implement RegisterController
+  final GlobalKey<FormState> registerFormKey = GlobalKey<FormState>();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  String? nameLastName;
+  String? phone;
+  String? password;
+
+  validNameLastName(String val){
+    if (val.isEmpty) {
+      return "ما يلزمش يكون فارغ";
+    }else if (val.length <= 30) {
+      return "اسمك و لقبك أقل من 30 حرف";
+    }
+    return null;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  validateNumber(String val) {
+    if (val.isEmpty) {
+      return "ما يلزمش يكون فارغ";
+    } else if (val.length != 8) {
+      return "نومرو مش صحيح";
+    }
+    return null;
   }
 
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+  validatePassword(String val) {
+    if (val.isEmpty) {
+      return "ما يلزمش يكون فارغ";
+    } else if (val.length <= 6) {
+      return "يلزم أكثر من 6 حروف";
+    }
+    return null;
+  }
+
+  void checkLogin() {
+    final isValid = registerFormKey.currentState!.validate();
+
+    if (!isValid) {
+      return;
+    }
+    registerFormKey.currentState!.save();
+  }
 }

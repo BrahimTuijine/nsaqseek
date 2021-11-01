@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:get/get.dart';
 import 'package:nsaqseek/app/modules/auth/login/bindings/login_binding.dart';
 import 'package:nsaqseek/app/modules/auth/login/views/login_view.dart';

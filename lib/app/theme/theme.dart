@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:nsaqseek/app/theme/constants.dart';
 
 
 final ThemeData appThemeData = ThemeData(
-  fontFamily: GoogleFonts.tajawal().fontFamily,
+  // fontFamily: GoogleFonts.tajawal().fontFamily,
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       hintStyle: const TextStyle(fontWeight: FontWeight.bold),
