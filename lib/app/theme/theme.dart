@@ -1,8 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:nsaqseek/app/theme/constants.dart';
+
+
 final ThemeData appThemeData = ThemeData(
-  primaryColor: Colors.blueAccent,
-  fontFamily: 'Georgia',
-  textTheme: TextTheme(
-    headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
-  ),
+  fontFamily: GoogleFonts.tajawal().fontFamily,
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      hintStyle: const TextStyle(fontWeight: FontWeight.bold),
+      border: OutlineInputBorder(
+        borderSide: BorderSide.none,
+        borderRadius: BorderRadius.circular(10),
+      ),
+    ),
+    scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.white,
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all<Color?>(Constants.blueGreen),
+      ),
+    ),  
 );
