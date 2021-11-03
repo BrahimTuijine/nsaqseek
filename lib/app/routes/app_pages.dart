@@ -14,6 +14,8 @@ import 'package:nsaqseek/app/modules/seggussions/bindings/seggussions_binding.da
 import 'package:nsaqseek/app/modules/seggussions/views/seggussions_view.dart';
 import 'package:nsaqseek/app/modules/services/bindings/services_binding.dart';
 import 'package:nsaqseek/app/modules/services/views/services_view.dart';
+import 'package:nsaqseek/app/modules/splash/bindings/splash_binding.dart';
+import 'package:nsaqseek/app/modules/splash/views/splash_view.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -27,22 +29,22 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
+      page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
       name: _Paths.LOGIN,
-      page: () => LoginView(),
+      page: () => const LoginView(),
       binding: LoginBinding(),
     ),
     GetPage(
       name: _Paths.REGISTER,
-      page: () => RegisterView(),
+      page: () => const RegisterView(),
       binding: RegisterBinding(),
     ),
     GetPage(
       name: _Paths.DASHBOARD,
-      page: () => DashboardView(),
+      page: () => const DashboardView(),
       binding: DashboardBinding(),
     ),
     GetPage(
@@ -59,6 +61,11 @@ class AppPages {
       name: _Paths.SERVICES,
       page: () => ServicesView(),
       binding: ServicesBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASH,
+      page: () => const SplashView(),
+      binding: SplashBinding(),
     ),
   ];
 }

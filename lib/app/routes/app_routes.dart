@@ -13,6 +13,7 @@ abstract class Routes {
   static const SEARCH = _Paths.SEARCH;
   static const SEGGUSSIONS = _Paths.SEGGUSSIONS;
   static const SERVICES = _Paths.SERVICES;
+  static const SPLASH = _Paths.SPLASH;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const SEARCH = '/search';
   static const SEGGUSSIONS = '/seggussions';
   static const SERVICES = '/services';
+  static const SPLASH = '/splash';
 }
