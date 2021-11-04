@@ -17,11 +17,8 @@ class SplashView extends GetView<SplashController> {
         children: [
           Expanded(
             child: PageView.builder(
+              onPageChanged: controller.currentIndex,
               controller: controller.pageController,
-              onPageChanged: (int index) {
-                controller.onPageChange(index);
-                print(controller.currentIndex);
-              },
               itemCount: onBoarding.length,
               itemBuilder: (_, i) {
                 return Padding(
@@ -58,8 +55,7 @@ class SplashView extends GetView<SplashController> {
                       i == 2
                           ? OriginalButton(
                               bgColor: Constants.blueGreen,
-                              onpressed: () => Navigator.of(context)
-                                  .pushReplacementNamed("login"),
+                              onpressed: () => Get.offAllNamed("/login"),
                               text: 'إتفضل',
                             )
                           : const Text(""),
@@ -76,18 +72,18 @@ class SplashView extends GetView<SplashController> {
               children: List.generate(
                 onBoarding.length,
                 (index) {
-                  return AnimatedContainer(
-                    duration: const Duration(milliseconds: 400),
-                    margin: const EdgeInsets.only(right: 5),
-                    height: 5,
-                    width: controller.currentIndex == index ? 15 : 10,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(Get.width * .1),
-                      color: controller.currentIndex == index
-                          ? Constants.blueGreen
-                          : Constants.grey.withOpacity(.4),
-                    ),
-                  );
+                  return Obx(() => AnimatedContainer(
+                        duration: const Duration(milliseconds: 400),
+                        margin: const EdgeInsets.only(right: 5),
+                        height: 5,
+                        width: controller.currentIndex.value == index ? 15 : 10,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(Get.width * .1),
+                          color: controller.currentIndex.value == index
+                              ? Constants.blueGreen
+                              : Constants.grey.withOpacity(.4),
+                        ),
+                      ));
                 },
               ),
             ),

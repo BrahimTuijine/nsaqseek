@@ -4,12 +4,8 @@ import 'package:get/get.dart';
 class SplashController extends GetxController {
 
 late PageController pageController;
-  int currentIndex = 0;
+  RxInt currentIndex = 0.obs;
 
-  void onPageChange(int i){
-    currentIndex = i;
-    update();
-  }
 
 
 
