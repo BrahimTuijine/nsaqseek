@@ -1,20 +1,25 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class SeggussionsController extends GetxController {
-  //TODO: Implement SeggussionsController
+  final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
+  String? topic;
+  String? seggussion;
+
+  String? validator(String value) {
+    if (value.isEmpty) {
+      return "ما يلزمش يكون فارغ";
+    }
+    return null;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
+  void checkLogin() {
+    final isValid = loginFormKey.currentState!.validate();
 
-  @override
-  void onClose() {}
-  void increment() => count.value++;
+    if (!isValid) {
+      return;
+    }
+    loginFormKey.currentState!.save();
+  }
 }
