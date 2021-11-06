@@ -1,20 +1,38 @@
 import 'package:get/get.dart';
+import 'package:nsaqseek/app/modules/services/model/service_model.dart';
 
 class ServicesController extends GetxController {
-  //TODO: Implement ServicesController
+  List<ServiceModel> service = [
+    ServiceModel(
+        image: 'assets/images/iconCard60Maintenance@3x.png',
+        page: "seggussions",
+        text: "إقتراحات"),
+    ServiceModel(
+        image: 'assets/images/myrequest60@3x.png',
+        page: "/demand",
+        text: 'مطلب نفاذ للمعلومة'),
+    ServiceModel(
+        image: 'assets/images/iconServiceLocationGoogle@3x.png',
+        page: "soon",
+        text: "الكميون وين سي على"),
+    ServiceModel(
+        image: 'assets/images/phone@3x.png',
+        page: "soon",
+        text: "اطلب البلدية"),
+  ];
 
-  final count = 0.obs;
+  List<ServiceModel> foundedService = [];
+
   @override
   void onInit() {
+    foundedService = service;
+    update();
     super.onInit();
   }
 
-  @override
-  void onReady() {
-    super.onReady();
+  onSearch(value) {
+    foundedService =
+        service.where((roudoud) => roudoud.text.contains(value)).toList();
+    update();
   }
-
-  @override
-  void onClose() {}
-  void increment() => count.value++;
 }

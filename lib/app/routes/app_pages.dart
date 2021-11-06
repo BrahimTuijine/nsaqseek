@@ -8,6 +8,8 @@ import 'package:nsaqseek/app/modules/dashboard/bindings/dashboard_binding.dart';
 import 'package:nsaqseek/app/modules/dashboard/views/dashboard_view.dart';
 import 'package:nsaqseek/app/modules/demand/bindings/demand_binding.dart';
 import 'package:nsaqseek/app/modules/demand/views/demand_view.dart';
+import 'package:nsaqseek/app/modules/enddrawer/bindings/enddrawer_binding.dart';
+import 'package:nsaqseek/app/modules/enddrawer/views/enddrawer_view.dart';
 import 'package:nsaqseek/app/modules/home/bindings/home_binding.dart';
 import 'package:nsaqseek/app/modules/home/views/home_view.dart';
 import 'package:nsaqseek/app/modules/search/bindings/search_binding.dart';
@@ -51,17 +53,17 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SEARCH,
-      page: () => SearchView(),
+      page: () => const SearchView(),
       binding: SearchBinding(),
     ),
     GetPage(
       name: _Paths.SEGGUSSIONS,
-      page: () => SeggussionsView(),
+      page: () => const SeggussionsView(),
       binding: SeggussionsBinding(),
     ),
     GetPage(
       name: _Paths.SERVICES,
-      page: () => ServicesView(),
+      page: () => const ServicesView(),
       binding: ServicesBinding(),
     ),
     GetPage(
@@ -71,8 +73,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DEMAND,
-      page: () => DemandView(),
+      page: () => const DemandView(),
       binding: DemandBinding(),
+    ),
+    GetPage(
+      name: _Paths.ENDDRAWER,
+      page: () => const EnddrawerView(),
+      binding: EnddrawerBinding(),
     ),
   ];
 }

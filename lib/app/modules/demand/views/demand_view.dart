@@ -21,6 +21,7 @@ class DemandView extends GetView<DemandController> {
         body: TabBarView(
           children: [
             Form(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               key: controller.formKeyOne,
               child: SizedBox(
                   width: double.infinity,
@@ -154,6 +155,7 @@ class DemandView extends GetView<DemandController> {
                   )),
             ),
             Form(
+              autovalidateMode: AutovalidateMode.onUserInteraction,
               key: controller.formKeyTwo,
               child: SizedBox(
                 width: double.infinity,

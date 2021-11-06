@@ -37,7 +37,7 @@ AppBar tabsAppBar(context, title, tabOne, tabTwo) {
     actions: [
       IconButton(
         onPressed: () {
-          Get.toNamed("/dashboard");
+          Get.back();
         },
         icon: const Icon(
           Icons.close_rounded,

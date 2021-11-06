@@ -76,11 +76,11 @@ class DashboardView extends GetView<DashboardController> {
   Widget btnNavBarPages() {
     switch (controller.tabIndex) {
       case 1:
-        return ServicesView();
+        return const ServicesView();
       case 2:
         return const SeggussionsView();
       case 3:
-        return  SearchView();
+        return  const SearchView();
       case 0:
       default:
         return const HomeView();

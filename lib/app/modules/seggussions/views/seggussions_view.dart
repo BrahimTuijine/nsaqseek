@@ -37,6 +37,7 @@ class SeggussionsView extends GetView<SeggussionsController> {
             child: Container(
               padding: EdgeInsets.all(size.width / 10),
               child: Form(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
                 key: controller.loginFormKey,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
