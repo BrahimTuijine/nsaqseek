@@ -6,6 +6,8 @@ import 'package:nsaqseek/app/modules/auth/register/bindings/register_binding.dar
 import 'package:nsaqseek/app/modules/auth/register/views/register_view.dart';
 import 'package:nsaqseek/app/modules/dashboard/bindings/dashboard_binding.dart';
 import 'package:nsaqseek/app/modules/dashboard/views/dashboard_view.dart';
+import 'package:nsaqseek/app/modules/demand/bindings/demand_binding.dart';
+import 'package:nsaqseek/app/modules/demand/views/demand_view.dart';
 import 'package:nsaqseek/app/modules/home/bindings/home_binding.dart';
 import 'package:nsaqseek/app/modules/home/views/home_view.dart';
 import 'package:nsaqseek/app/modules/search/bindings/search_binding.dart';
@@ -66,6 +68,11 @@ class AppPages {
       name: _Paths.SPLASH,
       page: () => const SplashView(),
       binding: SplashBinding(),
+    ),
+    GetPage(
+      name: _Paths.DEMAND,
+      page: () => DemandView(),
+      binding: DemandBinding(),
     ),
   ];
 }

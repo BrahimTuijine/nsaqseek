@@ -14,6 +14,7 @@ abstract class Routes {
   static const SEGGUSSIONS = _Paths.SEGGUSSIONS;
   static const SERVICES = _Paths.SERVICES;
   static const SPLASH = _Paths.SPLASH;
+  static const DEMAND = _Paths.DEMAND;
 }
 
 abstract class _Paths {
@@ -25,4 +26,5 @@ abstract class _Paths {
   static const SEGGUSSIONS = '/seggussions';
   static const SERVICES = '/services';
   static const SPLASH = '/splash';
+  static const DEMAND = '/demand';
 }

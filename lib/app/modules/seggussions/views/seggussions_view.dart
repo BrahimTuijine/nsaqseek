@@ -116,7 +116,7 @@ class SeggussionsView extends GetView<SeggussionsController> {
                       bgColor: Colors.lightBlue,
                       text: 'ابعث',
                       onpressed: () {
-                        controller.checkLogin();
+                        controller.checkValidation();
                       },
                     ),
                   ],

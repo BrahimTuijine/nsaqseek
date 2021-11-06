@@ -14,7 +14,7 @@ class SeggussionsController extends GetxController {
     return null;
   }
 
-  void checkLogin() {
+  void checkValidation() {
     final isValid = loginFormKey.currentState!.validate();
 
     if (!isValid) {
