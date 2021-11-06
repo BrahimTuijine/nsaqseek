@@ -20,53 +20,71 @@ class DashboardView extends GetView<DashboardController> {
       builder: (_) {
         return Scaffold(
           bottomNavigationBar: BottomNavyBar(
-      backgroundColor: Colors.white,
-      containerHeight: 60,
-      onItemSelected: controller.changeTabIndex,
-      selectedIndex: controller.tabIndex,
-      items: <BottomNavyBarItem>[
-        BottomNavyBarItem(
-          icon: const Icon(Icons.home),
-          title: const Text('الرئيسية'),
-          activeColor: const Color(0xFF01706E),
-          inactiveColor: Colors.grey,
-          textAlign: TextAlign.center,
-        ),
-        BottomNavyBarItem(
-          icon: const Icon(Icons.book),
-          title: const Text('الخدمات'),
-          activeColor: const Color(0xFF01706E),
-          inactiveColor: Colors.grey,
-          textAlign: TextAlign.center,
-        ),
-        BottomNavyBarItem(
-          icon: const Icon(Icons.apartment),
-          title: const Text('المقترحات'),
-          activeColor: const Color(0xFF01706E),
-          inactiveColor: Colors.grey,
-          textAlign: TextAlign.center,
-        ),
-        BottomNavyBarItem(
-          icon: const Icon(Icons.search_rounded),
-          title: const Text('البحث'),
-          activeColor: const Color(0xFF01706E),
-          inactiveColor: Colors.grey,
-          textAlign: TextAlign.center,
-        ),
-      ],
-    ),
-            body: SafeArea(
-          child: IndexedStack(
-            index: controller.tabIndex,
-            children: [
-              const HomeView(),
-              ServicesView(),
-              SeggussionsView(),
-              SearchView(),
+            backgroundColor: Colors.white,
+            containerHeight: 60,
+            onItemSelected: controller.changeTabIndex,
+            selectedIndex: controller.tabIndex,
+            items: <BottomNavyBarItem>[
+              BottomNavyBarItem(
+                icon: const Icon(Icons.home),
+                title: const Text('الرئيسية'),
+                activeColor: const Color(0xFF01706E),
+                inactiveColor: Colors.grey,
+                textAlign: TextAlign.center,
+              ),
+              BottomNavyBarItem(
+                icon: const Icon(Icons.book),
+                title: const Text('الخدمات'),
+                activeColor: const Color(0xFF01706E),
+                inactiveColor: Colors.grey,
+                textAlign: TextAlign.center,
+              ),
+              BottomNavyBarItem(
+                icon: const Icon(Icons.apartment),
+                title: const Text('المقترحات'),
+                activeColor: const Color(0xFF01706E),
+                inactiveColor: Colors.grey,
+                textAlign: TextAlign.center,
+              ),
+              BottomNavyBarItem(
+                icon: const Icon(Icons.search_rounded),
+                title: const Text('البحث'),
+                activeColor: const Color(0xFF01706E),
+                inactiveColor: Colors.grey,
+                textAlign: TextAlign.center,
+              ),
             ],
           ),
-        ));
+          body: btnNavBarPages()
+          // SafeArea(
+          //   child: IndexedStack(
+          //     index: controller.tabIndex,
+          //     children: [
+          //       const HomeView(),
+          //       ServicesView(),
+          //       const SeggussionsView(),
+          //       SearchView(),
+          //     ],
+          //   ),
+          // ),
+        );
       },
     );
   }
+
+  
+  Widget btnNavBarPages() {
+    switch (controller.tabIndex) {
+      case 1:
+        return ServicesView();
+      case 2:
+        return const SeggussionsView();
+      case 3:
+        return  SearchView();
+      case 0:
+      default:
+        return const HomeView();
+    }
+  }
+
 }
