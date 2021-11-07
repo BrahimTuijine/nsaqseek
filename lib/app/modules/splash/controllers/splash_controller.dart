@@ -6,9 +6,6 @@ class SplashController extends GetxController {
 late PageController pageController;
   RxInt currentIndex = 0.obs;
 
-
-
-
   @override
   void onInit() {
     pageController = PageController(initialPage: 0);
@@ -21,7 +18,4 @@ late PageController pageController;
     pageController.dispose();
     super.onClose();
   }
-
-
-
 }

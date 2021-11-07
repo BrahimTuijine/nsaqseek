@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:nsaqseek/app/modules/enddrawer/views/enddrawer_view.dart';
+import 'package:nsaqseek/app/modules/home/widgets/customsearch_widget.dart';
 import 'package:nsaqseek/app/modules/services/widgets/service_component.dart';
 import 'package:nsaqseek/app/theme/constants.dart';
 
@@ -55,39 +56,9 @@ class ServicesView extends GetView<ServicesController> {
                         width: size.width,
                       ),
                     ),
-                    Positioned(
-                      child: Container(
-                        margin: const EdgeInsets.all(20.0),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 5),
-                        height: size.height * 0.065,
-                        width: size.width * .9,
-                        decoration: BoxDecoration(
-                          boxShadow: [Constants.kDefaultShadow],
-                          color: Colors.white,
-                        ),
-                        child: TextField(
-                          onChanged: (value) => controller.onSearch(value),
-                          textDirection: TextDirection.rtl,
-                          style: const TextStyle(color: Constants.grey),
-                          decoration: const InputDecoration(
-                            filled: false,
-                            enabledBorder: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            icon: Icon(
-                              Icons.search,
-                              color: Constants.grey,
-                            ),
-                            hintText: 'لوج بنوع السرفيس',
-                            hintTextDirection: TextDirection.rtl,
-                            hintStyle: TextStyle(
-                              color: Constants.grey,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+                  const Positioned(
+                    child: CustomSearch(textHint: 'لوج بنوع السرفيس',),
+                  ),
                   ],
                 ),
                 SizedBox(
