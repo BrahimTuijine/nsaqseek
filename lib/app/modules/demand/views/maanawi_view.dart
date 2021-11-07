@@ -1,0 +1,155 @@
+import 'package:flutter/material.dart';
+import 'package:nsaqseek/app/modules/auth/widgets/elevated_auth_button.dart';
+import 'package:nsaqseek/app/modules/demand/controllers/demand_controller.dart';
+import 'package:nsaqseek/app/modules/demand/widgets/demand_input_form_field.dart';
+import 'package:nsaqseek/app/theme/constants.dart';
+
+class Maanawi extends StatelessWidget {
+  const Maanawi({
+    Key? key,
+    required this.controller,
+    required this.size,
+  }) : super(key: key);
+
+  final DemandController controller;
+  final Size size;
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      key: controller.formKeyTwo,
+      child: SizedBox(
+        width: double.infinity,
+        child: GestureDetector(
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: SingleChildScrollView(
+            child: Container(
+              padding: EdgeInsets.all(size.width / 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  const Text(
+                    "تسمية الاجتماعية",
+                    style: TextStyle(
+                        color: Constants.blueGreen,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  DemandInputField(
+                    texthint: 'تسمية الاجتماعية',
+                    onsaved: (value) =>
+                        controller.communityName = value,
+                    validator: (value) => controller.validator(value!),
+                    maxline: 1,
+                    minline: 1,
+                  ),
+                  SizedBox(
+                    height: size.height * .1 / 3,
+                  ),
+                  const Text(
+                    "المقر الاجتماعي",
+                    style: TextStyle(
+                        color: Constants.blueGreen,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  DemandInputField(
+                    texthint: 'المقر الاجتماعي',
+                    onsaved: (value) =>
+                        controller.communityplace = value,
+                    validator: (value) => controller.validator(value!),
+                    maxline: 1,
+                    minline: 1,
+                  ),
+                  SizedBox(
+                    height: size.height * .1 / 3,
+                  ),
+                  const Text(
+                    "نومرو تلفون",
+                    style: TextStyle(
+                        color: Constants.blueGreen,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  DemandInputField(
+                    texthint: '55555555',
+                    onsaved: (value) =>
+                        controller.communityphone = value,
+                    maxline: 1,
+                    minline: 1,
+                  ),
+                  SizedBox(
+                    height: size.height * .1 / 3,
+                  ),
+                  const Text(
+                    "موضوع",
+                    style: TextStyle(
+                        color: Constants.blueGreen,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  DemandInputField(
+                    texthint: 'موضوع المطلب',
+                    onsaved: (value) => controller.cumtitle = value,
+                    validator: (value) => controller.validator(value!),
+                    maxline: 1,
+                    minline: 1,
+                  ),
+                  SizedBox(
+                    height: size.height * .1 / 3,
+                  ),
+                  const Text(
+                    "معلومة",
+                    style: TextStyle(
+                        color: Constants.blueGreen,
+                        fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: size.height * .1 / 9,
+                  ),
+                  DemandInputField(
+                    texthint: 'شنية لمعلومة ألي تحب تعرفها',
+                    onsaved: (value) =>
+                        controller.communityInformation = value,
+                    validator: (value) => controller.validator(value!),
+                    maxline: 5,
+                    minline: 1,
+                  ),
+                  SizedBox(
+                    height: size.height * .1 / 3,
+                  ),
+                  OriginalButton(
+                    bgColor: Colors.lightBlue,
+                    text: 'ابعث',
+                    onpressed: () {
+                      controller.checkValdMa3nawi();
+                      // if (_formTwo.currentState!.validate()) {
+                      //   _formTwo.currentState!.save();
+                      //   Random random = Random();
+                      //   DateTime today = DateTime.now();
+                      //   String dateSlug =
+                      //       "${today.year.toString()}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}";
+
+                      //   listOfRequestes.add(
+                      //     Requests(
+                      //         id: random.nextInt(3000) + 3001,
+                      //         title: cumtitle,
+                      //         date: dateSlug,
+                      //         inprogress: true,
+                      //         content: communityInformation),
+                      //   );
+
+                      //   displayNotification(cumtitle,
+                      //       "نشالله مبتناش عليك. أعمل طلة على الاشعارات");
+                      //   Navigator.of(context)
+                      //       .pushReplacementNamed("thanks");
+                      // }
+                    },
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

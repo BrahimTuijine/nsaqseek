@@ -56,17 +56,7 @@ class DashboardView extends GetView<DashboardController> {
             ],
           ),
           body: btnNavBarPages()
-          // SafeArea(
-          //   child: IndexedStack(
-          //     index: controller.tabIndex,
-          //     children: [
-          //       const HomeView(),
-          //       ServicesView(),
-          //       const SeggussionsView(),
-          //       SearchView(),
-          //     ],
-          //   ),
-          // ),
+
         );
       },
     );

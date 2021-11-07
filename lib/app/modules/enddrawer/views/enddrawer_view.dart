@@ -20,7 +20,9 @@ class EnddrawerView extends GetView<EnddrawerController> {
         ),
         actions: [
           IconButton(
-            onPressed: () => Get.back(),
+            onPressed: () {
+              Get.back();
+            },
             icon: const Icon(
               Icons.close_rounded,
               color: Colors.black,
