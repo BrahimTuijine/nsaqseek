@@ -22,4 +22,5 @@ class SeggussionsController extends GetxController {
     }
     loginFormKey.currentState!.save();
   }
+
 }

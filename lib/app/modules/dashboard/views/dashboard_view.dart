@@ -55,14 +55,12 @@ class DashboardView extends GetView<DashboardController> {
               ),
             ],
           ),
-          body: btnNavBarPages()
-
+          body: btnNavBarPages(),
         );
       },
     );
   }
 
-  
   Widget btnNavBarPages() {
     switch (controller.tabIndex) {
       case 1:
@@ -70,11 +68,9 @@ class DashboardView extends GetView<DashboardController> {
       case 2:
         return const SeggussionsView();
       case 3:
-        return  const SearchView();
-      case 0:
+        return const SearchView();
       default:
-        return const HomeView();
+        return HomeView();
     }
   }
-
 }

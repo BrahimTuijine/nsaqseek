@@ -56,9 +56,12 @@ class ServicesView extends GetView<ServicesController> {
                         width: size.width,
                       ),
                     ),
-                  const Positioned(
-                    child: CustomSearch(textHint: 'لوج بنوع السرفيس',),
-                  ),
+                    Positioned(
+                      child: CustomSearch(
+                        textHint: 'لوج بنوع السرفيس',
+                        onchange: (value) => controller.onSearch(value),
+                      ),
+                    ),
                   ],
                 ),
                 SizedBox(

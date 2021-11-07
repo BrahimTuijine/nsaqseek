@@ -14,9 +14,6 @@ class DashboardBinding extends Bindings {
     Get.lazyPut<SeggussionsController>(
       () => SeggussionsController(),
     );
-    Get.lazyPut<ServicesController>(
-      () => ServicesController(),
-    );
     Get.lazyPut<HomeController>(
       () => HomeController(),
     );

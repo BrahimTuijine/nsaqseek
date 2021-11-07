@@ -52,10 +52,9 @@ class HomeView extends GetView<HomeController> {
                       width: Get.width,
                     ),
                   ),
-                  const Positioned(
-                    child: CustomSearch(
-                      textHint: 'لوج بنوع السرفيس',
-                    ),
+                  CustomSearch(
+                    textHint: 'لوج بنوع السرفيس',
+                    onchange: (value) {},
                   ),
                 ],
               ),
@@ -105,13 +104,12 @@ class HomeView extends GetView<HomeController> {
                       controller: controller.pageController,
                       onPageChanged: controller.currentIndex,
                       itemCount: 4,
-                      itemBuilder: (_, int index){
+                      itemBuilder: (_, int index) {
                         return Padding(
-                          padding: EdgeInsets.all(Get.width * .1 /4),
+                          padding: EdgeInsets.all(Get.width * .1 / 4),
                           child: const CustomNews(),
                         );
                       },
-
                     ),
                   )
                 ],
