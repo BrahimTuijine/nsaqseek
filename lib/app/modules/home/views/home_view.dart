@@ -30,91 +30,96 @@ class HomeView extends GetView<HomeController> {
           icon: const Icon(Icons.notifications_outlined),
         ),
       ),
-      body: SingleChildScrollView(
-        child: SizedBox(
-          width: Get.width,
-          child: Column(
-            children: [
-              Stack(
-                children: [
-                  Positioned(
-                    child: Container(
-                      height: Get.height * .05,
-                      decoration: BoxDecoration(
-                        gradient: Constants.gradient,
+      body: RefreshIndicator(
+        key: controller.refreshIndicatorKey,
+        onRefresh: controller.onRefresh,
+        child: SingleChildScrollView(
+          child: SizedBox(
+            width: Get.width,
+            child: Column(
+              children: [
+                Stack(
+                  children: [
+                    Positioned(
+                      child: Container(
+                        height: Get.height * .05,
+                        decoration: BoxDecoration(
+                          gradient: Constants.gradient,
+                        ),
                       ),
                     ),
-                  ),
-                  Positioned(
-                    top: Get.height * .05,
-                    child: SizedBox(
-                      height: 50,
-                      width: Get.width,
+                    Positioned(
+                      top: Get.height * .05,
+                      child: SizedBox(
+                        height: 50,
+                        width: Get.width,
+                      ),
                     ),
-                  ),
-                  CustomSearch(
-                    textHint: 'لوج بنوع السرفيس',
-                    onchange: (value) {},
-                  ),
-                ],
-              ),
-              Column(
-                children: [
-                  Padding(
-                    padding: EdgeInsets.only(
-                        bottom: 5,
-                        left: Get.width * .1 / 2,
-                        right: Get.width * .1 / 2),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        GestureDetector(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: const [
-                              Icon(
-                                Icons.arrow_back_ios,
-                                color: Color(0xff7F7F7F),
-                                size: 15,
-                              ),
-                              Text(
-                                "أظهر الكل",
-                                style: TextStyle(
-                                    color: Color(0xff7F7F7F),
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15.0),
-                              )
-                            ],
+                    CustomSearch(
+                      textHint: 'لوج بنوع السرفيس',
+                      onchange: (value) {},
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                          bottom: 5,
+                          left: Get.width * .1 / 2,
+                          right: Get.width * .1 / 2),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          GestureDetector(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: const [
+                                Icon(
+                                  Icons.arrow_back_ios,
+                                  color: Color(0xff7F7F7F),
+                                  size: 15,
+                                ),
+                                Text(
+                                  "أظهر الكل",
+                                  style: TextStyle(
+                                      color: Color(0xff7F7F7F),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15.0),
+                                )
+                              ],
+                            ),
                           ),
-                        ),
-                        const Text(
-                          "شفمة جديد",
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 25.0,
+                          const Text(
+                            "شفمة جديد",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 25.0,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    height: Get.height * .5 / 2,
-                    child: PageView.builder(
-                      controller: controller.pageController,
-                      onPageChanged: controller.currentIndex,
-                      itemCount: 4,
-                      itemBuilder: (_, int index) {
-                        return Padding(
-                          padding: EdgeInsets.all(Get.width * .1 / 4),
-                          child: const CustomNews(),
-                        );
-                      },
-                    ),
-                  )
-                ],
-              )
-            ],
+                    SizedBox(
+                      height: Get.height * .5 / 2,
+                      child: PageView.builder(
+                        controller: controller.pageController,
+                        onPageChanged: controller.currentIndex,
+                        itemCount: 4,
+                        itemBuilder: (_, int index) {
+                          return Padding(
+                            padding: EdgeInsets.all(Get.width * .1 / 4),
+                            child: const CustomNews(),
+                          );
+                        },
+                      ),
+                    )
+                  ],
+                ),
+                Obx(() => Text("${controller.testingRefrech}"))
+              ],
+            ),
           ),
         ),
       ),

@@ -55,7 +55,10 @@ class SplashView extends GetView<SplashController> {
                       i == 2
                           ? OriginalButton(
                               bgColor: Constants.blueGreen,
-                              onpressed: () => Get.offAllNamed("/login"),
+                              onpressed: () {
+                                controller.storeOnboardInfo();
+                                Get.offAllNamed("/login");
+                              },
                               text: 'إتفضل',
                             )
                           : const Text(""),
