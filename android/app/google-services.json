@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "180174719723",
-    "project_id": "nsaqseek",
-    "storage_bucket": "nsaqseek.appspot.com"
+    "project_number": "716725934001",
+    "project_id": "paldia",
+    "storage_bucket": "paldia.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:180174719723:android:6faff3ca8ce6814cf7ccae",
+        "mobilesdk_app_id": "1:716725934001:android:7edc9ae183a6fe46358f90",
         "android_client_info": {
           "package_name": "com.nsaqseek.nsaqseek"
         }
       },
       "oauth_client": [
         {
-          "client_id": "180174719723-ak3asklmne742mv75eqvumjh8gqlijt5.apps.googleusercontent.com",
+          "client_id": "716725934001-mh9ajkmce9lkrd4lge58r1jad39fad91.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBYABQkBrPfQCe-2zl36Pjd0wcnn3xrUz0"
+          "current_key": "AIzaSyBlUhNWyWGmkMB1e4--W-_q0Z_BaqtH51w"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "180174719723-ak3asklmne742mv75eqvumjh8gqlijt5.apps.googleusercontent.com",
+              "client_id": "716725934001-mh9ajkmce9lkrd4lge58r1jad39fad91.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

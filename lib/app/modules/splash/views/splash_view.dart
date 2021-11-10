@@ -24,7 +24,6 @@ class SplashView extends GetView<SplashController> {
                 return Padding(
                   padding: EdgeInsets.all(Get.height * .1 / 2),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Text(
                         onBoarding[i].title.toString(),
