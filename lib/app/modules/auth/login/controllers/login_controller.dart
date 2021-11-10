@@ -1,7 +1,8 @@
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/cupertino.dart';
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:http/http.dart' as http;
 
 class LoginController extends GetxController {
   final GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
@@ -9,16 +10,11 @@ class LoginController extends GetxController {
   String? phone;
   String? password;
 
-  @override
-  void onInit() async {
-    super.onInit();
-  }
-
   validateNumber(String val) {
-    if (val.isEmpty) {
+    if (val.isEmail) {
       return "ما يلزمش يكون فارغ";
-    } else if (val.length != 8) {
-      return "نومرو مش صحيح";
+    } else if (!val.isEmail) {
+      return "لازم يكون عندك بريد إلكتروني";
     }
     return null;
   }
@@ -30,6 +26,24 @@ class LoginController extends GetxController {
       return "يلزم أكثر من 6 حروف";
     }
     return null;
+  }
+
+  Future<bool> login(email, password) async {
+    http.Response response = await http.post(
+      Uri.parse('https://jsonplaceholder.typicode.com/albums'),
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        'username': email,
+        'password': password,
+      }),
+    );
+    if(response.statusCode == 200){
+      return true;
+    }else{
+      return false;
+    }
   }
 
   void checkLogin() {

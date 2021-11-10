@@ -56,13 +56,12 @@ class LoginView extends GetView<LoginController> {
                           horizontal: MediaQuery.of(context).size.width / 10),
                       child: Form(
                         key: controller.loginFormKey,
-                        autovalidateMode: AutovalidateMode.onUserInteraction,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             MyTextForm(
                               onsaved: (value) => controller.phone = value,
-                              texthint: 'رقم الهاتف',
+                              texthint: 'بريد إلكتروني',
                               validator: (newValue) =>
                                   controller.validateNumber(newValue!),
                             ),

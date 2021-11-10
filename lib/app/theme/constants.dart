@@ -14,4 +14,7 @@ class Constants {
 
   static LinearGradient gradient =
       const LinearGradient(colors: [Constants.blueGreen, Constants.lightGreen]);
+  
+
+  static String endpoint = "http://192.168.1.0:8080/";
 }
