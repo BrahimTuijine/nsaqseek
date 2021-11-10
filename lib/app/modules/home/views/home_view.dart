@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nsaqseek/app/modules/home/widgets/customnews_widget.dart';
 import 'package:nsaqseek/app/modules/home/widgets/customsearch_widget.dart';
+import 'package:nsaqseek/app/modules/home/widgets/service_widget.dart';
 import 'package:nsaqseek/app/theme/constants.dart';
 
 import '../controllers/home_controller.dart';
@@ -114,10 +115,29 @@ class HomeView extends GetView<HomeController> {
                           );
                         },
                       ),
-                    )
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: List.generate(4, (index) {
+                        return Obx(
+                          () => AnimatedContainer(
+                            duration: const Duration(milliseconds: 600),
+                            margin: EdgeInsets.only(right: Get.width * .1 / 4),
+                            height: Get.height * .1 / 10,
+                            width:
+                                controller.currentIndex.value == index ? 16 : 8,
+                            decoration: BoxDecoration(
+                                color: controller.currentIndex.value == index
+                                    ? const Color(0xFF01706E)
+                                    : const Color(0xFF01706E).withOpacity(0.6),
+                                borderRadius: BorderRadius.circular(50.0)),
+                          ),
+                        );
+                      }),
+                    ),
+                    
                   ],
                 ),
-                Obx(() => Text("${controller.testingRefrech}"))
               ],
             ),
           ),

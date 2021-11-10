@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "180174719723",
+    "project_id": "nsaqseek",
+    "storage_bucket": "nsaqseek.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:180174719723:android:6faff3ca8ce6814cf7ccae",
+        "android_client_info": {
+          "package_name": "com.nsaqseek.nsaqseek"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "180174719723-ak3asklmne742mv75eqvumjh8gqlijt5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYABQkBrPfQCe-2zl36Pjd0wcnn3xrUz0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "180174719723-ak3asklmne742mv75eqvumjh8gqlijt5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

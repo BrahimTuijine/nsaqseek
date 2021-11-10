@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -7,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   SharedPreferences prefs = await SharedPreferences.getInstance();
   int? isOnboarded = prefs.getInt("isOnbarded");
   runApp( MyApp(isOnboarded: isOnboarded));
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      initialRoute: isOnboarded != 0 ? Routes.SPLASH : Routes.LOGIN,
+      initialRoute: Routes.DASHBOARD,  //isOnboarded != 0 ? Routes.SPLASH : Routes.LOGIN,
       theme: appThemeData,
       defaultTransition: Transition.fade,
       getPages: AppPages.routes,
