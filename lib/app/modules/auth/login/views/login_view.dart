@@ -78,21 +78,18 @@ class LoginView extends GetView<LoginController> {
                             ),
                             SizedBox(
                               height:
-                                  MediaQuery.of(context).size.height * .1 / 3,
+                                  Get.height * .1 / 3,
                             ),
                             OriginalButton(
                               bgColor: Colors.lightBlue,
                               onpressed: () {
                                 controller.checkLogin();
-
-                                // Navigator.of(context)
-                                //     .pushReplacementNamed("home");
                               },
                               text: 'دخول',
                             ),
                             SizedBox(
                               height:
-                                  MediaQuery.of(context).size.height * .1 / 3,
+                                  Get.height * .1 / 3,
                             ),
                             ChooseToLogin(
                               ask: 'ان لم يكن لديك حساب ؟',

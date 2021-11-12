@@ -11,9 +11,7 @@ class LoginController extends GetxController {
   String? password;
 
   validateNumber(String val) {
-    if (val.isEmail) {
-      return "ما يلزمش يكون فارغ";
-    } else if (!val.isEmail) {
+    if (!val.isEmail) {
       return "لازم يكون عندك بريد إلكتروني";
     }
     return null;

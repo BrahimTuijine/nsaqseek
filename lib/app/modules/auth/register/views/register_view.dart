@@ -14,17 +14,21 @@ class RegisterView extends GetView<RegisterController> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: GestureDetector(
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: SingleChildScrollView(
-          child: Stack(
-            children: <Widget>[
-              Container(
-                height: MediaQuery.of(context).size.height * 0.43,
-                decoration: const BoxDecoration(
-                  gradient: LinearGradient(
-                      colors: [Constants.blueGreen, Constants.lightGreen]),
+    return Obx(() => Scaffold(
+          body: controller.isloading.value ? const Center(
+            child: CircularProgressIndicator(
+              color: Colors.lightBlue,
+            ),
+          ): GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: SingleChildScrollView(
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    height: MediaQuery.of(context).size.height * 0.43,
+                    decoration: const BoxDecoration(
+                      gradient: LinearGradient(
+                          colors: [Constants.blueGreen, Constants.lightGreen]),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(45),
                     bottomRight: Radius.circular(45),
@@ -61,8 +65,8 @@ class RegisterView extends GetView<RegisterController> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
                             MyTextForm(
-                              onsaved: (String? newValue) =>
-                                  controller.nameLastName = newValue,
+                              onsaved: (value) =>
+                                  controller.nameLastName = value,
                               texthint: 'إسم و اللقب',
                               validator: (value) =>
                                   controller.validNameLastName(value!),
@@ -73,17 +77,21 @@ class RegisterView extends GetView<RegisterController> {
                             ),
                             
                             MyTextForm(
-                              onsaved: (value) => controller.phone,
+                              onsaved: (value) {
+                                controller.email = value;
+                              },
                               validator: (value) =>
-                                  controller.validateNumber(value!),
-                              texthint: "رقم الهاتف",
+                                  controller.validateEmail(value!),
+                              texthint: 'بريد إلكتروني',
                             ),
                             SizedBox(
                               height:
                                   MediaQuery.of(context).size.height * .1 / 3,
                             ),
                             MyTextForm(
-                              onsaved: (value) => controller.password,
+                              onsaved: (value){
+                                controller.password = value;
+                              },
                               validator: (value) =>
                                   controller.validatePassword(value!),
                               texthint: "كلمة المرور",
@@ -119,6 +127,6 @@ class RegisterView extends GetView<RegisterController> {
           ),
         ),
       ),
-    );
+    ),);
   }
 }

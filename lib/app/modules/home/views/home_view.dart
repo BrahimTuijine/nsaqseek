@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nsaqseek/app/modules/home/widgets/customnews_widget.dart';
 import 'package:nsaqseek/app/modules/home/widgets/customsearch_widget.dart';
-import 'package:nsaqseek/app/modules/home/widgets/service_widget.dart';
 import 'package:nsaqseek/app/theme/constants.dart';
 
 import '../controllers/home_controller.dart';

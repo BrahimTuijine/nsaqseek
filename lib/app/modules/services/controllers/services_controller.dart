@@ -14,7 +14,7 @@ class ServicesController extends GetxController {
     ServiceModel(
         image: 'assets/images/iconServiceLocationGoogle@3x.png',
         page: "soon",
-        text: "الكميون وين سي على"),
+        text: "الكميون وين"),
     ServiceModel(
         image: 'assets/images/phone@3x.png',
         page: "soon",

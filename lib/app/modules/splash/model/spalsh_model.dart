@@ -13,11 +13,11 @@ List<OnboardingContent> onBoarding = [
       discription: "توفرلك خدمات البلدية"),
   OnboardingContent(
       title: "أضمن حقك",
-      image: "assets/images/iconCardRequestANewService@3x.png",
+      image: "assets/images/6@4x.png",
       discription:
           "ماكش وحدك معك الفصل 32 من الدستور والمادة 19 من الاعلان العالمي لحقوق الانسان إلي يضمنولك حقك"),
   OnboardingContent(
       title: "استنى جديدنا",
-      image: "assets/images/contactUs1@3x.png",
+      image: "assets/images/1@4x.png",
       discription: "تمتع بخدمت مطلب النفاذ إلى المعلومة واستنى برشى جديد")
 ];

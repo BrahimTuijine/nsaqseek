@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -13,7 +12,6 @@ late PageController pageController;
     int isOnboarded = 0;
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setInt("isOnbarded", isOnboarded);
-    print(prefs.getInt("isOnbarded"));
   }
 
   @override

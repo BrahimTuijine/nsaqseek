@@ -73,8 +73,8 @@ class ServicesView extends GetView<ServicesController> {
                   builder: (_) {
                     return Container(
                       padding: EdgeInsets.all(
-                          MediaQuery.of(context).size.width / 19),
-                      height: MediaQuery.of(context).size.height,
+                          Get.width / 19),
+                      height: Get.height,
                       child: GridView.builder(
                         gridDelegate:
                             const SliverGridDelegateWithFixedCrossAxisCount(

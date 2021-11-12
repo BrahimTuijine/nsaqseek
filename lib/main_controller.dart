@@ -1,12 +1,17 @@
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class MainController extends GetxController {
   FirebaseMessaging fcm = FirebaseMessaging.instance;
   @override
   void onInit() async {
-    fcm.getToken().then((value) {
-      print(value);
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+
+    fcm.getToken().then((value) async {
+      if(value != null){
+        await prefs.setString("fcmtoken", value);
+      }
     });
     // when the app is terminared
     fcm.getInitialMessage().then((event) {
