@@ -70,7 +70,7 @@ class DashboardView extends GetView<DashboardController> {
       case 3:
         return const SearchView();
       default:
-        return HomeView();
+        return const HomeView();
     }
   }
 }
