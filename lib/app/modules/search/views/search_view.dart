@@ -58,40 +58,10 @@ class SearchView extends GetView<SearchController> {
                           width: size.width,
                         ),
                       ),
-                      
-                        // child: Container(
-                        //   margin: const EdgeInsets.all(20.0),
-                        //   padding: const EdgeInsets.symmetric(
-                        //       horizontal: 20.0, vertical: 5),
-                        //   height: size.height * 0.065,
-                        //   width: size.width * .9,
-                        //   decoration: BoxDecoration(
-                        //     boxShadow: [Constants.kDefaultShadow],
-                        //     color: Colors.white,
-                        //   ),
-                        //   child: TextField(
-                        //     onChanged: (value) => controller.onSearch(value),
-                        //     textDirection: TextDirection.rtl,
-                        //     style: const TextStyle(color: Constants.grey),
-                        //     decoration: const InputDecoration(
-                        //       filled: false,
-                        //       enabledBorder: InputBorder.none,
-                        //       focusedBorder: InputBorder.none,
-                        //       icon: Icon(
-                        //         Icons.search,
-                        //         color: Constants.grey,
-                        //       ),
-                        //       hintText: 'لوج بالعنوان',
-                        //       hintTextDirection: TextDirection.rtl,
-                        //       hintStyle: TextStyle(
-                        //         color: Constants.grey,
-                        //         fontWeight: FontWeight.bold,
-                        //       ),
-                        //     ),
-                        //   ),
-                        // ),
-
-                        CustomSearch(onchange: (value) => controller.onSearch(value), textHint: 'لوج بالعنوان',)
+                      CustomSearch(
+                        onchange: (value) => controller.onSearch(value),
+                        textHint: 'لوج بالعنوان',
+                      ),
                     ],
                   ),
                 ),
@@ -116,11 +86,6 @@ class SearchView extends GetView<SearchController> {
                                     " الرد على " + oneRequest.title,
                                     style: const TextStyle(
                                         fontWeight: FontWeight.w600),
-                                  ),
-                                  leading: const CircleAvatar(
-                                    backgroundColor: Colors.transparent,
-                                    backgroundImage: AssetImage(
-                                        "assets/images/statusClosed@3x.png"),
                                   ),
                                   children: [
                                     Row(
@@ -149,7 +114,7 @@ class SearchView extends GetView<SearchController> {
                           : Container(
                               margin: EdgeInsets.only(
                                   top:
-                                      MediaQuery.of(context).size.height * .30),
+                                      Get.height * .30),
                               child: const Text(
                                 'مافماش إجابة على مطلب كيف هكا ',
                                 style: TextStyle(
