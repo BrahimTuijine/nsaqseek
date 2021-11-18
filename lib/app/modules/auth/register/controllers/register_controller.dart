@@ -56,17 +56,16 @@ class RegisterController extends GetxController {
     registerFormKey.currentState!.save();
     //send a post request
     if (email != null && password != null) {
-      print(email);
-      print(password);
       isloading.value = true;
       http.Response response = await _auth.register(
           email, password, nameLastName, token);
       if (response.statusCode == 201) {
-        print(response.statusCode);
         isloading.value = false;
+        Get.offNamedUntil("/dashboard", (route) => false);
       } else {
         error = true;
         print(error);
+        print(response.body);
       }
     }
   }

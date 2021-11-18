@@ -1,8 +1,9 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:nsaqseek/app/theme/constants.dart';
 
 class AuthProvider {
-  static String baseUrl = "http://192.168.1.127:8000/api/users";
+  static String baseUrl =  Constants.endpoint +  "api/users";
 
   Future<http.Response> login(String email, String password) {
     return http.post(
@@ -17,7 +18,7 @@ class AuthProvider {
     );
   }
 
-  register(email, password, fullname, token) async {
+  Future<http.Response> register(email, password, fullname, token) async {
     return http.post(
       Uri.parse(baseUrl),
       headers: <String, String>{

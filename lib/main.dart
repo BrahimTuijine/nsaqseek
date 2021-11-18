@@ -35,7 +35,7 @@ class MyApp extends GetView<MainController> {
           BindingsBuilder(() => {Get.put<MainController>(MainController())}),
       debugShowCheckedModeBanner: false,
       initialRoute:
-          Routes.DASHBOARD, //isOnboarded != 0 ? Routes.SPLASH : Routes.LOGIN,
+          Routes.SPLASH, //isOnboarded != 0 ? Routes.SPLASH : Routes.LOGIN,
       theme: appThemeData,
       defaultTransition: Transition.fade,
       getPages: AppPages.routes,
