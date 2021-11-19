@@ -103,13 +103,15 @@ class HomeView extends GetView<HomeController> {
                       itemCount: 4,
                       itemBuilder: (_, int index) {
                         return Padding(
-                          padding: EdgeInsets.all(Get.width * .1 / 4  ),
+                          padding: EdgeInsets.all(Get.width * .1 / 4),
                           child: const CustomNews(),
                         );
                       },
                     ),
                   ),
-                  SizedBox(height: Get.width * .1 / 4,),
+                  SizedBox(
+                    height: Get.width * .1 / 4,
+                  ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(4, (index) {
