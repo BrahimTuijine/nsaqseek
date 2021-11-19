@@ -103,12 +103,13 @@ class HomeView extends GetView<HomeController> {
                       itemCount: 4,
                       itemBuilder: (_, int index) {
                         return Padding(
-                          padding: EdgeInsets.all(Get.width * .1 / 4),
+                          padding: EdgeInsets.all(Get.width * .1 / 4  ),
                           child: const CustomNews(),
                         );
                       },
                     ),
                   ),
+                  SizedBox(height: Get.width * .1 / 4,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: List.generate(4, (index) {
@@ -144,7 +145,7 @@ class HomeView extends GetView<HomeController> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       SizedBox(
-                        height: Get.width * .26,
+                        height: Get.width * .3,
                         width: Get.width * .2,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -158,7 +159,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                       ),
                       SizedBox(
-                        height: Get.width * .26,
+                        height: Get.width * .3,
                         width: Get.width * .2,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -172,7 +173,7 @@ class HomeView extends GetView<HomeController> {
                         ),
                       ),
                       SizedBox(
-                        height: Get.width * .26,
+                        height: Get.width * .3,
                         width: Get.width * .2,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
