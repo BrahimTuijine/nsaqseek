@@ -3,16 +3,17 @@ import 'package:http/http.dart' as http;
 import 'package:nsaqseek/app/theme/constants.dart';
 
 class AuthProvider {
-  static String baseUrl =  Constants.endpoint +  "api/users";
+  static String baseUrl =  Constants.endpoint +  "api/users.json";
+  static String baseLoginUrl = Constants.endpoint + "api/login_check"; 
 
-  Future<http.Response> login(String email, String password) {
+  Future<http.Response> login(String username, String password) {
     return http.post(
-      Uri.parse(baseUrl),
+      Uri.parse(baseLoginUrl),
       headers: <String, String>{
         'Content-Type': 'application/json',
-      },
+      },  
       body: jsonEncode(<String, String>{
-        'email': email,
+        'username': username,
         'password': password,
       }),
     );

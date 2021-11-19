@@ -1,0 +1,17 @@
+{
+  "id": 0,
+  "email": "string",
+  "roles": [
+    "string"
+  ],
+  "fullName": "string",
+  "demands": [
+    "string"
+  ],
+  "suggetions": [
+    "string"
+  ],
+  "news": [
+    "string"
+  ]
+}

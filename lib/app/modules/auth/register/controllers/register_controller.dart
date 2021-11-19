@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nsaqseek/app/modules/auth/providers/auth_provider.dart';
@@ -8,7 +10,7 @@ class RegisterController extends GetxController {
   final GlobalKey<FormState> registerFormKey = GlobalKey<FormState>();
   final AuthProvider _auth = AuthProvider();
   RxBool isloading = false.obs;
-  bool error = false;
+  RxBool error = false.obs;
   late SharedPreferences prefs;
 
   String? nameLastName;
@@ -50,22 +52,37 @@ class RegisterController extends GetxController {
 
     // get the token from shared preferences;
     String? token = prefs.getString("fcmtoken");
-    
-    
+
     //save the value of the current state
     registerFormKey.currentState!.save();
     //send a post request
     if (email != null && password != null) {
-      isloading.value = true;
-      http.Response response = await _auth.register(
-          email, password, nameLastName, token);
-      if (response.statusCode == 201) {
+      try {
+        isloading.value = true;
+        http.Response response =
+            await _auth.register(email, password, nameLastName, token);
+        if (response.statusCode == 201) {
+          isloading.value = false;
+          Get.offNamedUntil("/login", (route) => false);
+        } else {
+          isloading.value = false;
+          Get.snackbar(
+            "الحساب موجود",
+            "الحساب موجود جرب تسجيل دخول",
+            snackPosition: SnackPosition.TOP,
+            backgroundColor: Colors.red,
+            colorText: Colors.white,
+          );
+        }
+      } catch (e) {
         isloading.value = false;
-        Get.offNamedUntil("/dashboard", (route) => false);
-      } else {
-        error = true;
-        print(error);
-        print(response.body);
+        Get.snackbar(
+          "خطأ",
+          "إن شاء الله يتصلح في أقرب وقت",
+          snackPosition: SnackPosition.TOP,
+          backgroundColor: Colors.red,
+          colorText: Colors.white,
+        );
       }
     }
   }
