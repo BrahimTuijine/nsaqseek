@@ -19,5 +19,5 @@ List<OnboardingContent> onBoarding = [
   OnboardingContent(
       title: "استنى جديدنا",
       image: "assets/images/1@4x.png",
-      discription: "تمتع بخدمت مطلب النفاذ إلى المعلومة واستنى برشى جديد")
+      discription: "تمتع بخدمة النفاذ إلى المعلومة واستنى برشى جديد")
 ];

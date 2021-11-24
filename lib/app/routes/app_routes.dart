@@ -16,6 +16,7 @@ abstract class Routes {
   static const SPLASH = _Paths.SPLASH;
   static const DEMAND = _Paths.DEMAND;
   static const ENDDRAWER = _Paths.ENDDRAWER;
+  static const THANKS = _Paths.THANKS;
 }
 
 abstract class _Paths {
@@ -29,4 +30,5 @@ abstract class _Paths {
   static const SPLASH = '/splash';
   static const DEMAND = '/demand';
   static const ENDDRAWER = '/enddrawer';
+  static const THANKS = '/thanks';
 }

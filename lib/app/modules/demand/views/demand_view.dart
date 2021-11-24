@@ -16,7 +16,8 @@ class DemandView extends GetView<DemandController> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        appBar: tabsAppBar(context, "مطلب نفاذ للمعلومة", "شخص معنوي", "مواطن"),
+        appBar:
+            tabsAppBar(context, "مطلب نفاذ إلى المعلومة", "شخص معنوي", "مواطن"),
         body: TabBarView(
           children: [
             Mowaten(controller: controller, size: size),
@@ -27,6 +28,3 @@ class DemandView extends GetView<DemandController> {
     );
   }
 }
-
-
-

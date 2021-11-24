@@ -47,7 +47,7 @@ class LoginView extends GetView<LoginController> {
                                     .1 /
                                     2),
                             const Text(
-                              'سجل و اجا معانا',
+                              'سجل و ايجا معانا',
                               style: TextStyle(
                                 fontSize: 28,
                                 color: Colors.white,

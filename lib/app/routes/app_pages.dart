@@ -20,6 +20,8 @@ import 'package:nsaqseek/app/modules/services/bindings/services_binding.dart';
 import 'package:nsaqseek/app/modules/services/views/services_view.dart';
 import 'package:nsaqseek/app/modules/splash/bindings/splash_binding.dart';
 import 'package:nsaqseek/app/modules/splash/views/splash_view.dart';
+import 'package:nsaqseek/app/modules/thanks/bindings/thanks_binding.dart';
+import 'package:nsaqseek/app/modules/thanks/views/thanks_view.dart';
 
 // ignore_for_file: constant_identifier_names
 
@@ -80,6 +82,11 @@ class AppPages {
       name: _Paths.ENDDRAWER,
       page: () => const EnddrawerView(),
       binding: EnddrawerBinding(),
+    ),
+    GetPage(
+      name: _Paths.THANKS,
+      page: () => ThanksView(),
+      binding: ThanksBinding(),
     ),
   ];
 }

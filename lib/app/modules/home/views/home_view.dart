@@ -55,7 +55,7 @@ class HomeView extends GetView<HomeController> {
                     ),
                   ),
                   CustomSearch(
-                    textHint: 'لوج بنوع السرفيس',
+                    textHint: 'لوج بنوع الخدمة',
                     onchange: (value) {},
                   ),
                 ],

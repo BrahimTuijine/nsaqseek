@@ -14,7 +14,6 @@ class Maanawi extends StatelessWidget {
   final DemandController controller;
   final Size size;
 
-
   @override
   Widget build(BuildContext context) {
     return Form(
@@ -31,15 +30,14 @@ class Maanawi extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   const Text(
-                    "تسمية الاجتماعية",
+                    "التسمية الاجتماعية",
                     style: TextStyle(
                         color: Constants.blueGreen,
                         fontWeight: FontWeight.bold),
                   ),
                   DemandInputField(
-                    texthint: 'تسمية الاجتماعية',
-                    onsaved: (value) =>
-                        controller.communityName = value,
+                    texthint: 'التسمية الاجتماعية',
+                    onsaved: (value) => controller.communityName = value,
                     validator: (value) => controller.validator(value!),
                     maxline: 1,
                     minline: 1,
@@ -55,8 +53,7 @@ class Maanawi extends StatelessWidget {
                   ),
                   DemandInputField(
                     texthint: 'المقر الاجتماعي',
-                    onsaved: (value) =>
-                        controller.communityplace = value,
+                    onsaved: (value) => controller.communityplace = value,
                     validator: (value) => controller.validator(value!),
                     maxline: 1,
                     minline: 1,
@@ -65,15 +62,14 @@ class Maanawi extends StatelessWidget {
                     height: size.height * .1 / 3,
                   ),
                   const Text(
-                    "نومرو تلفون",
+                    "رقم الهاتف",
                     style: TextStyle(
                         color: Constants.blueGreen,
                         fontWeight: FontWeight.bold),
                   ),
                   DemandInputField(
                     texthint: '55555555',
-                    onsaved: (value) =>
-                        controller.communityphone = value,
+                    onsaved: (value) => controller.communityphone = value,
                     maxline: 1,
                     minline: 1,
                   ),
@@ -81,7 +77,7 @@ class Maanawi extends StatelessWidget {
                     height: size.height * .1 / 3,
                   ),
                   const Text(
-                    "موضوع",
+                    "الموضوع",
                     style: TextStyle(
                         color: Constants.blueGreen,
                         fontWeight: FontWeight.bold),
@@ -97,7 +93,7 @@ class Maanawi extends StatelessWidget {
                     height: size.height * .1 / 3,
                   ),
                   const Text(
-                    "معلومة",
+                    "المعلومة",
                     style: TextStyle(
                         color: Constants.blueGreen,
                         fontWeight: FontWeight.bold),
@@ -107,8 +103,7 @@ class Maanawi extends StatelessWidget {
                   ),
                   DemandInputField(
                     texthint: 'شنية لمعلومة ألي تحب تعرفها',
-                    onsaved: (value) =>
-                        controller.communityInformation = value,
+                    onsaved: (value) => controller.communityInformation = value,
                     validator: (value) => controller.validator(value!),
                     maxline: 5,
                     minline: 1,
@@ -123,22 +118,6 @@ class Maanawi extends StatelessWidget {
                       controller.checkValdMa3nawi();
                       // if (_formTwo.currentState!.validate()) {
                       //   _formTwo.currentState!.save();
-                      //   Random random = Random();
-                      //   DateTime today = DateTime.now();
-                      //   String dateSlug =
-                      //       "${today.year.toString()}-${today.month.toString().padLeft(2, '0')}-${today.day.toString().padLeft(2, '0')}";
-
-                      //   listOfRequestes.add(
-                      //     Requests(
-                      //         id: random.nextInt(3000) + 3001,
-                      //         title: cumtitle,
-                      //         date: dateSlug,
-                      //         inprogress: true,
-                      //         content: communityInformation),
-                      //   );
-
-                      //   displayNotification(cumtitle,
-                      //       "نشالله مبتناش عليك. أعمل طلة على الاشعارات");
                       //   Navigator.of(context)
                       //       .pushReplacementNamed("thanks");
                       // }

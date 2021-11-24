@@ -58,7 +58,7 @@ class ServicesView extends GetView<ServicesController> {
                     ),
                     Positioned(
                       child: CustomSearch(
-                        textHint: 'لوج بنوع السرفيس',
+                        textHint: 'لوج بنوع الخدمة',
                         onchange: (value) => controller.onSearch(value),
                       ),
                     ),
@@ -72,8 +72,7 @@ class ServicesView extends GetView<ServicesController> {
                   initState: (_) {},
                   builder: (_) {
                     return Container(
-                      padding: EdgeInsets.all(
-                          Get.width / 19),
+                      padding: EdgeInsets.all(Get.width / 19),
                       height: Get.height,
                       child: GridView.builder(
                         gridDelegate:

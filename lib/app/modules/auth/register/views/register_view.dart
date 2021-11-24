@@ -44,7 +44,7 @@ class RegisterView extends GetView<RegisterController> {
                           children: <Widget>[
                             SizedBox(height: Get.height * .1 / 2),
                             const Text(
-                              'سجل و اجا معانا',
+                              'سجل و ايجا معانا',
                               style: TextStyle(
                                 fontSize: 28,
                                 color: Colors.white,
