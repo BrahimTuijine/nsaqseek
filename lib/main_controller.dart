@@ -29,10 +29,11 @@ class MainController extends GetxController {
 
     //when the app is in forground
     FirebaseMessaging.onMessage.listen((event) {
-      final routeFromFireBase = event.data["route"];
-      print("qsdqsd");
+      // TODO the notification shoul appear when the app is open
     });
 
     super.onInit();
   }
 }
+
+// 

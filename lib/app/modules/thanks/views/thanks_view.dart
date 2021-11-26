@@ -36,7 +36,7 @@ class ThanksView extends GetView<ThanksController> {
             OriginalButton(
               bgColor: Constants.blueGreen,
               onpressed: () {
-                Get.offNamedUntil("dashboard", (route) => false);
+                Get.back();
               },
               text: "الرئيسية",
             )

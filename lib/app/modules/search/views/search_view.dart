@@ -29,7 +29,7 @@ class SearchView extends GetView<SearchController> {
           ),
           leading: IconButton(
             onPressed: () =>
-                Navigator.of(context).pushReplacementNamed("notification"),
+                Get.toNamed("/notifcations"),
             icon: const Icon(Icons.notifications_outlined),
           ),
         ),

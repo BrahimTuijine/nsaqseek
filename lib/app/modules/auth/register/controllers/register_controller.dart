@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:nsaqseek/app/modules/auth/providers/auth_provider.dart';
@@ -65,6 +63,7 @@ class RegisterController extends GetxController {
           isloading.value = false;
           Get.offNamedUntil("/login", (route) => false);
         } else {
+          print(response.body);
           isloading.value = false;
           Get.snackbar(
             "الحساب موجود",
@@ -83,8 +82,8 @@ class RegisterController extends GetxController {
           backgroundColor: Colors.red,
           colorText: Colors.white,
         );
+        print(e);
       }
     }
   }
 }
-// 

@@ -17,6 +17,7 @@ abstract class Routes {
   static const DEMAND = _Paths.DEMAND;
   static const ENDDRAWER = _Paths.ENDDRAWER;
   static const THANKS = _Paths.THANKS;
+  static const NOTIFCATIONS = _Paths.NOTIFCATIONS;
 }
 
 abstract class _Paths {
@@ -31,4 +32,5 @@ abstract class _Paths {
   static const DEMAND = '/demand';
   static const ENDDRAWER = '/enddrawer';
   static const THANKS = '/thanks';
+  static const NOTIFCATIONS = '/notifcations';
 }

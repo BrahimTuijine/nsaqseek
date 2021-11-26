@@ -31,7 +31,7 @@ class EnddrawerView extends GetView<EnddrawerController> {
         ],
       ),
       body: Container(
-          padding: EdgeInsets.all(MediaQuery.of(context).size.width / 10),
+          padding: EdgeInsets.all(Get.width / 10),
           child: Column(
             children: <Widget>[
               Row(
@@ -55,7 +55,7 @@ class EnddrawerView extends GetView<EnddrawerController> {
                         CircleAvatar(
                           backgroundColor: Colors.transparent,
                           child: Image(
-                            image: AssetImage("assets/images/iconCard1@3x.png"),
+                            image: AssetImage("assets/images/7@4x.png"),
                           ),
                         ),
                       ],
@@ -64,7 +64,7 @@ class EnddrawerView extends GetView<EnddrawerController> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * .1 / 5,
+                height: Get.height * .1 / 5,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -86,7 +86,7 @@ class EnddrawerView extends GetView<EnddrawerController> {
                         backgroundColor: Colors.transparent,
                         child: Image(
                           image:
-                              AssetImage("assets/images/CutomerSupport@3x.png"),
+                              AssetImage("assets/images/9@4x.png"),
                         ),
                       ),
                     ],
@@ -94,13 +94,13 @@ class EnddrawerView extends GetView<EnddrawerController> {
                 ],
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * .1 / 8,
+                height: Get.height * .1 / 8,
               ),
               const Divider(
                 color: Colors.black,
               ),
               SizedBox(
-                height: MediaQuery.of(context).size.height * .1 / 8,
+                height: Get.height * .1 / 8,
               ),
               InkWell(
                 onTap: () =>
@@ -124,7 +124,7 @@ class EnddrawerView extends GetView<EnddrawerController> {
                         CircleAvatar(
                           backgroundColor: Colors.transparent,
                           child: Image(
-                            image: AssetImage("assets/images/login@3x.png"),
+                            image: AssetImage("assets/images/4@4x.png"),
                           ),
                         ),
                       ],

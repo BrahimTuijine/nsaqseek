@@ -30,7 +30,9 @@ class ServicesView extends GetView<ServicesController> {
             ),
           ),
           leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.toNamed("/notifcations");
+            },
             icon: const Icon(Icons.notifications_outlined),
           ),
         ),

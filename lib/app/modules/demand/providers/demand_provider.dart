@@ -17,7 +17,7 @@ class DemandeProvider {
         'tel': tel,
         'topic': topic,
         'description': description,
-        'owner': owner
+        'owner': "/api/users/"+ owner.toString()
       }),
     );
   }

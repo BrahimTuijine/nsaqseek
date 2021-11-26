@@ -54,15 +54,17 @@ class DemandController extends GetxController {
       return;
     }
     formKeyOne.currentState!.save();
-    // String fullname = name! + " " + lastname!;
-    // int tel = int.parse(phone!);
-    // String? owner = prefs.getString("id");
-    // http.Response response = await _provider.sendDemand(
-    //     fullname, tel, title.toString(), information.toString(), owner);
-    // if (response.statusCode == 201) {
-    //   print(jsonDecode(response.body));
-    // }
-    Get.toNamed("thanks");
+    String fullname = name! + " " + lastname!;
+    int tel = int.parse(phone!);
+    String? owner = prefs.getString("id");
+    http.Response response = await _provider.sendDemand(
+        fullname, tel, title.toString(), information.toString(), owner);
+    if (response.statusCode == 201) {
+      print(jsonDecode(response.body));
+      Get.toNamed("thanks");
+    }else{
+      print(response.body);
+    }
   }
 
   void checkValdMa3nawi() {

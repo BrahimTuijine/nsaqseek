@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:nsaqseek/app/modules/enddrawer/views/enddrawer_view.dart';
 import 'package:nsaqseek/app/modules/home/widgets/customnews_widget.dart';
 import 'package:nsaqseek/app/modules/home/widgets/customsearch_widget.dart';
 import 'package:nsaqseek/app/theme/constants.dart';
@@ -15,6 +16,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      endDrawer: const EnddrawerView(),
       appBar: AppBar(
         title: const Text(
           'الرئيسية',
@@ -28,7 +30,9 @@ class HomeView extends GetView<HomeController> {
           ),
         ),
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Get.toNamed("/notifcations");
+          },
           icon: const Icon(Icons.notifications_outlined),
         ),
       ),

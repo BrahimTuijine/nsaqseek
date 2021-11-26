@@ -12,6 +12,8 @@ import 'package:nsaqseek/app/modules/enddrawer/bindings/enddrawer_binding.dart';
 import 'package:nsaqseek/app/modules/enddrawer/views/enddrawer_view.dart';
 import 'package:nsaqseek/app/modules/home/bindings/home_binding.dart';
 import 'package:nsaqseek/app/modules/home/views/home_view.dart';
+import 'package:nsaqseek/app/modules/notifcations/bindings/notifcations_binding.dart';
+import 'package:nsaqseek/app/modules/notifcations/views/notifcations_view.dart';
 import 'package:nsaqseek/app/modules/search/bindings/search_binding.dart';
 import 'package:nsaqseek/app/modules/search/views/search_view.dart';
 import 'package:nsaqseek/app/modules/seggussions/bindings/seggussions_binding.dart';
@@ -85,8 +87,13 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.THANKS,
-      page: () => ThanksView(),
+      page: () => const ThanksView(),
       binding: ThanksBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFCATIONS,
+      page: () => const NotifcationsView(),
+      binding: NotifcationsBinding(),
     ),
   ];
 }

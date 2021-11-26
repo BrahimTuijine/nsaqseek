@@ -1,0 +1,13 @@
+[
+  {
+    "id": 0,
+    "fullName": "string",
+    "tel": 0,
+    "topic": "string",
+    "description": "string",
+    "owner": "string",
+    "responses": [
+      "string"
+    ]
+  }
+]
