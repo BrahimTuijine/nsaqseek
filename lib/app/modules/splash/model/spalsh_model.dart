@@ -8,7 +8,7 @@ class OnboardingContent {
 
 List<OnboardingContent> onBoarding = [
   OnboardingContent(
-      title: "seekاجا نسق",
+      title: "seekايجا نسق",
       image: "assets/images/my_logo.png",
       discription: "توفرلك خدمات البلدية"),
   OnboardingContent(
